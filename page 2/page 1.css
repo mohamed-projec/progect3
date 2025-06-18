@@ -189,7 +189,6 @@ main {
 
 .content {
     width: 95%;
-     background-color: rgba(255, 255, 255, 0.9); /* خلفية بيضاء وشفافة */
     max-width: 840px;
     background: #fff; /* اللون الحالي */
     margin: 30px 0 40px 0;
