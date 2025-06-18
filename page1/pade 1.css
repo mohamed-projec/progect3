@@ -1,0 +1,308 @@
+/* إعدادات عامة */
+body {
+    font-family: 'Cairo', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8faff;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* الهيدر */
+header {
+    background-color: #1c9896;
+    color: #fff;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.09);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0;
+    animation: slideDownHeader 1s cubic-bezier(.5,1.8,.5,1) 0s 1;
+}
+@keyframes slideDownHeader {
+    0% { transform: translateY(-100%); opacity: 0; }
+    60% { transform: translateY(20px); opacity: 1;}
+    100% { transform: translateY(0); opacity: 1;}
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 13px 10px 7px 10px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    animation: headerFadeIn 1.2s 0.3s backwards;
+}
+
+@keyframes headerFadeIn {
+    0% { opacity: 0; transform: translateX(60px);}
+    100% { opacity: 1; transform: translateX(0);}
+}
+
+/* اللوجو */
+.logo {
+    width: 150px;
+    height: 70px;
+    border-radius: 14px;
+    box-shadow: 0 2px 7px rgba(41,128,185,0.10);
+    object-fit: cover;
+    background: #fff;
+    margin-left: 12px;
+    border: 2px solid #eaf6ff;
+}
+@keyframes logoBounce {
+    0%, 100% { transform: translateY(0);}
+    50% { transform: translateY(-10px);}
+}
+
+/* قائمة الهيدر أفقية ومربعة */
+.main-nav {
+    display: flex;
+    gap: 0;
+    align-items: center;
+    background: #28716e;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 1px 7px rgba(41,128,185,0.08);
+}
+.main-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 130px;
+    height: 48px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    background: transparent;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    transition: background .22s, color .22s, box-shadow .16s;
+    letter-spacing: 0.5px;
+    text-align: center;
+    border-left: 1.5px solid #2980b9;
+    position: relative;
+}
+
+.main-nav a:first-child {
+    border-right: 0;
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
+.main-nav a:last-child {
+    border-left: 0;
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+}
+.main-nav a.active,
+.main-nav a:hover,
+.main-nav a:focus {
+    background: #fff;
+    color:  #196565;
+    text-decoration: none;
+    z-index: 2;
+    box-shadow: 0 2px 18px rgba(41,128,185,0.10);
+}
+.main-nav a.active {
+    font-weight: 800;
+    border-top: 2.5px solid #4FC3F7;
+    border-bottom: 2.5px solid #4FC3F7;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    animation: fadeInLeft 1.3s 0.6s backwards;
+}
+@keyframes fadeInLeft {
+    0% { opacity: 0; transform: translateX(-60px);}
+    100% { opacity: 1; transform: translateX(0);}
+}
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 23px;
+    padding: 4px 10px;
+    box-shadow: 0 2px 6px rgba(41,128,185,0.05);
+    border: 1px solid #e3eaf5;
+}
+.search-input {
+    border: none;
+    outline: none;
+    padding: 9px 13px;
+    font-size: 15px;
+    border-radius: 23px;
+    flex: 1;
+    background: transparent;
+    min-width: 110px;
+}
+.search-input::placeholder {
+    color: #aaa;
+}
+.search-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 7px 18px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 23px;
+    margin-right: 6px;
+    transition: background-color 0.25s, color 0.25s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(41,128,185,0.09);
+    position: relative;
+    overflow: hidden;
+}
+.search-btn:hover, .search-btn:focus {
+    background-color: #21689a;
+    color: #e3eaf5;
+    transform: scale(1.05);
+}
+
+/* المحتوى */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      padding: 20px;
+    background: url('../background3.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+@keyframes introAppear {
+    from { opacity: 0; transform: translateY(30px) scale(0.95);}
+    70% { opacity: 1; transform: translateY(-10px) scale(1.03);}
+    to { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+.content {
+    width: 95%;
+    max-width: 840px;
+    background: #fff;
+    margin: 30px 0 40px 0;
+    border-radius: 16px;
+    box-shadow: 0 2px 20px rgba(41,128,185,0.08);
+    padding: 32px 18px 28px 18px;
+    animation: fadeInContent 1.2s 1.2s backwards;
+}
+.content h1 {
+    text-align: center;
+    color: #000000; /* اللون الحالي */
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-size: 27px;
+    letter-spacing: 1px;
+    text-align: right;
+}
+
+.content h2 {
+    color: #000000; /* اللون الحالي */
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 2.1;
+    margin: 0;
+    text-align: right;
+}
+
+.content h3 {
+    color: #040303; /* لون جديد لإبراز العناوين الفرعية */
+    font-size: 21px; /* حجم خط مناسب */
+    font-weight: 500; /* وزن خط أقل قليلاً */
+    line-height: 2.1;
+    margin: 0;
+    text-align: right;
+}
+.content p {
+    color: #000000; /* لون مميز للروابط */
+    font-size: 36px; /* أصغر من h3 */
+    font-weight: bold; /* وزن خفيف */
+    text-decoration: none; /* إزالة التسطير */
+    line-height: 2.1;
+    margin: 0;
+    text-align: center;
+}
+.content a {
+    color: #040303; /* لون جديد لإبراز العناوين الفرعية */
+    font-size: 21px; /* حجم خط مناسب */
+    font-weight: 500; /* وزن خط أقل قليلاً */
+    line-height: 2.1;
+    margin: 0;
+    text-align: right;
+}
+@keyframes fadeInContent {
+    from { opacity: 0; transform: translateY(60px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+
+/* الفوتر (مثل الصفحة الأساسية) */
+footer {
+    text-align: center;
+    padding: 18px 10px 12px 10px;
+    background: linear-gradient( #38b6b4);
+    color: #fff;
+    font-size: 17px;
+    letter-spacing: 1px;
+    margin-top: auto;
+    box-shadow: 0 -2px 6px rgba(41,128,185,0.07);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    position: relative;
+    opacity: 0;
+    animation: fadeInFooter 1.2s 2.2s forwards;
+}
+@keyframes fadeInFooter {
+    0% { opacity: 0; transform: translateY(60px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+footer p {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 500;
+}
+footer a {
+    color: #ffe082;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 5px;
+    transition: color 0.2s;
+    word-break: break-all;
+}
+footer a:hover, footer a:focus {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* موبايل */
+@media (max-width: 820px) {
+    .header-container { flex-direction: column; gap: 10px; }
+    .header-right { flex-direction: column; gap: 6px; width: 100%; }
+    .main-nav { flex-direction: column; border-radius: 12px; width: 100%; }
+    .main-nav a {
+        min-width: 100%;
+        border-radius: 0 !important;
+        border: none !important;
+        height: 46px;
+        margin: 0;
+    }
+    .main-nav a:first-child, .main-nav a:last-child {
+        border-radius: 0 0 0 0 !important;
+    }
+    .logo { width: 38px; height: 38px;}
+    .content { padding: 14px 4px 13px 4px; }
+    .content h1 { font-size: 19px; }
+    .content h2 { font-size: 13px; }
+    footer { font-size: 13px; border-radius: 12px 12px 0 0;}
+}
