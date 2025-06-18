@@ -186,26 +186,10 @@ main {
     70% { opacity: 1; transform: translateY(-10px) scale(1.03);}
     to { opacity: 1; transform: translateY(0) scale(1);}
 }
-.course-content {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #ffffffee; /* خلفية شفافة خفيفة */
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  line-height: 1.6;
-  font-size: 18px;
-  direction: rtl;
-}
 
-@media (max-width: 768px) {
-  .course-content {
-    padding: 15px;
-    font-size: 16px;
-  }
-}
 .content {
     width: 95%;
+     background-color: rgba(255, 255, 255, 0.9); /* خلفية بيضاء وشفافة */
     max-width: 840px;
     background: #fff; /* اللون الحالي */
     margin: 30px 0 40px 0;
